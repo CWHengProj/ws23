@@ -1,7 +1,4 @@
 package com.ws23.Workshop23.Controller;
-
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,11 +18,11 @@ public class OrderController {
     OrderService orderService;
     @GetMapping("/total/{orderId}")
     public String getMethodName(@PathVariable String orderId, Model model) {
-        List<Order> processedOrders = orderService.getOrder(orderId);
-        if (processedOrders.size()==0){
+        Order processedOrder = orderService.getOrder(orderId);
+        if (processedOrder==null){
             return "error";
         }
-        model.addAttribute("processedOrders", processedOrders);
+        model.addAttribute("processedOrder", processedOrder);
         return "order";
     }
     

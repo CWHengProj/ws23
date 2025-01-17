@@ -6,6 +6,21 @@
     <title>Order</title>
 </head>
 <body>
-    <h1> Order</h1>
+    <h1>Order information of <span th:text="${processedOrder.id}"></span></h1>
+    <table>
+        <tr>
+            <th>Order Date</th>
+            <th>Customer Id</th>
+            <th>Total</th>
+            <th>Cost Price</th>
+        </tr>
+        <tr>
+            <td th:text="${processedOrder.order_date}"></td>
+            <td th:text="${processedOrder.customer_id}"></td>
+            <td th:text="${processedOrder.total}"></td>
+            <td th:text="${processedOrder.costPrice}"></td>
+
+        </tr>
+    </table>
 </body>
 </html>
