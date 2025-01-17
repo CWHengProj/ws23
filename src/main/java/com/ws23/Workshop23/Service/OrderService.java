@@ -1,5 +1,7 @@
 package com.ws23.Workshop23.Service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,9 +12,7 @@ import com.ws23.Workshop23.Repository.OrderRepo;
 public class OrderService {
     @Autowired
     OrderRepo orderRepo;
-    public Order getOrder(String orderId) {
-        //perform processing of the information here
-        
+    public List<Order> getOrder(String orderId) {
         return orderRepo.getOrder(orderId);         
     }
     
